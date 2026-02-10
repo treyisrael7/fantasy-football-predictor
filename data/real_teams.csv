@@ -1,0 +1,33 @@
+team_id,team,name,conference,division
+ARI,ARI,Arizona Cardinals,NFC,West
+ATL,ATL,Atlanta Falcons,NFC,South
+BAL,BAL,Baltimore Ravens,AFC,North
+BUF,BUF,Buffalo Bills,AFC,East
+CAR,CAR,Carolina Panthers,NFC,South
+CHI,CHI,Chicago Bears,NFC,North
+CIN,CIN,Cincinnati Bengals,AFC,North
+CLE,CLE,Cleveland Browns,AFC,North
+DAL,DAL,Dallas Cowboys,NFC,East
+DEN,DEN,Denver Broncos,AFC,West
+DET,DET,Detroit Lions,NFC,North
+GB,GB,Green Bay Packers,NFC,North
+HOU,HOU,Houston Texans,AFC,South
+IND,IND,Indianapolis Colts,AFC,South
+JAX,JAX,Jacksonville Jaguars,AFC,South
+KC,KC,Kansas City Chiefs,AFC,West
+LV,LV,Las Vegas Raiders,AFC,West
+LAC,LAC,Los Angeles Chargers,AFC,West
+LAR,LAR,Los Angeles Rams,NFC,West
+MIA,MIA,Miami Dolphins,AFC,East
+MIN,MIN,Minnesota Vikings,NFC,North
+NE,NE,New England Patriots,AFC,East
+NO,NO,New Orleans Saints,NFC,South
+NYG,NYG,New York Giants,NFC,East
+NYJ,NYJ,New York Jets,AFC,East
+PHI,PHI,Philadelphia Eagles,NFC,East
+PIT,PIT,Pittsburgh Steelers,AFC,North
+SF,SF,San Francisco 49ers,NFC,West
+SEA,SEA,Seattle Seahawks,NFC,West
+TB,TB,Tampa Bay Buccaneers,NFC,South
+TEN,TEN,Tennessee Titans,AFC,South
+WAS,WAS,Washington Commanders,NFC,East

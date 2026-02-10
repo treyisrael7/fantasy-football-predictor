@@ -1,0 +1,81 @@
+# -----------------------------------------------------------------------------
+# Ignore generated, secret, and local-only files. Kept in repo for deploy:
+#   app/, src/, scripts/, data/real_*.csv, requirements.txt, Dockerfile,
+#   docker-compose.yml, init.sql, README.md, DEPLOY.md, .env.example
+# -----------------------------------------------------------------------------
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+.cursor/
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Live/optional data (not required for app; app seeds from real_*.csv)
+data/live/
+!data/live/.gitkeep
+
+# Trained models (large, regenerable via: python scripts/train_models.py)
+models/models_real/
+models/*.pkl
+models/*.json
+!models/.gitkeep
+
+# Logs
+*.log
+logs/
+
+# Personal / reference only (not needed to run or deploy the app)
+RESUME_PROJECT.md
+
+# Secrets (use .env.example as template)
+.env
+.env.local
+.env.production
+*.pem
+
+# Temporary
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+temp/
+tmp/
