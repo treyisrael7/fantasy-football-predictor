@@ -16,6 +16,8 @@ uvicorn>=0.23.0
 # Data Collection
 requests>=2.31.0
 beautifulsoup4>=4.12.0
+# Optional: for scripts/fetch_historical_nflverse.py (2023/2024 prior-year data)
+# nfl_data_py>=0.3.0
 
 # Additional ML
 xgboost>=1.7.0

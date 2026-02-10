@@ -30,26 +30,36 @@ class FantasyPredictor:
         self.model_performance = {}
         self.is_trained = False
         
-    def train_models(self, X: pd.DataFrame, y: pd.Series, 
+    def train_models(self, X: pd.DataFrame, y: pd.Series,
+                    sample_weight: Optional[np.ndarray] = None,
                     test_size: float = 0.2, random_state: int = 42) -> Dict:
         """
-        Train multiple models for ensemble prediction
-        
+        Train multiple models for ensemble prediction.
+
         Args:
             X: Feature matrix
             y: Target variable
+            sample_weight: Optional per-sample weights (e.g. higher for fantasy-relevant players)
             test_size: Proportion of data for testing
             random_state: Random seed
-        
+
         Returns:
             Dictionary with model performance metrics
         """
         logger.info("Training fantasy football prediction models")
-        
-        # Split data
-        X_train, X_test, y_train, y_test = train_test_split(
-            X, y, test_size=test_size, random_state=random_state
+        if sample_weight is not None:
+            logger.info("Using sample weights (higher weight for higher PPG)")
+
+        # Split data (and weights if provided)
+        indices = np.arange(len(X))
+        i_train, i_test = train_test_split(
+            indices, test_size=test_size, random_state=random_state
         )
+        X_train = X.iloc[i_train]
+        X_test = X.iloc[i_test]
+        y_train = y.iloc[i_train]
+        y_test = y.iloc[i_test]
+        sw_train = sample_weight[i_train] if sample_weight is not None else None
         
         # Scale features
         scaler = StandardScaler()
@@ -98,12 +108,13 @@ class FantasyPredictor:
             logger.info(f"Training {name}")
             
             try:
+                kw = {} if sw_train is None else {"sample_weight": sw_train}
                 # Use scaled data for linear models, original for tree-based
                 if name in ['linear_regression', 'ridge', 'lasso']:
-                    model.fit(X_train_scaled, y_train)
+                    model.fit(X_train_scaled, y_train, **kw)
                     y_pred = model.predict(X_test_scaled)
                 else:
-                    model.fit(X_train, y_train)
+                    model.fit(X_train, y_train, **kw)
                     y_pred = model.predict(X_test)
                 
                 # Calculate metrics

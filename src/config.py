@@ -19,4 +19,4 @@ DATABASE_URL = os.getenv(
 REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379/0")
 
 # When True, app will try Postgres/Redis first and fall back to CSV if unavailable
-USE_DB = os.getenv("USE_DB", "true").lower() in ("1", "true", "yes")
+USE_DB = os.getenv("USE_DB", "false").lower() in ("1", "true", "yes")

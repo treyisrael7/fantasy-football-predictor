@@ -117,6 +117,12 @@ class SleeperNFLCollector:
             player_stats = []
             for player_id, stats in data.items():
                 if stats:  # Only include players with stats
+                    # Use Sleeper's precomputed pts_std (standard scoring) when present, else compute
+                    fp = stats.get('pts_std')
+                    if fp is None:
+                        fp = self._calculate_fantasy_points(stats)
+                    else:
+                        fp = round(float(fp), 2)
                     player_info = {
                         'player_id': player_id,
                         'season': season,
@@ -130,7 +136,10 @@ class SleeperNFLCollector:
                         'receiving_tds': stats.get('rec_td', 0),
                         'receptions': stats.get('rec', 0),
                         'fumbles': stats.get('fumbles_lost', 0),
-                        'fantasy_points': self._calculate_fantasy_points(stats)
+                        'fantasy_points': fp,
+                        'games_played': stats.get('gp'),
+                        'targets': stats.get('rec_tgt', 0) or 0,
+                        'carries': stats.get('rush_att', 0) or 0,
                     }
                     player_stats.append(player_info)
             

@@ -54,8 +54,6 @@ class PlayerPrediction(BaseModel):
     team: str
     predicted_points: float
     confidence: float
-    salary: int
-    value: float
 
 class PredictionRequest(BaseModel):
     week: int = 1
@@ -201,15 +199,7 @@ async def get_predictions(request: PredictionRequest):
             variance = np.random.normal(0, base_points * 0.3)  # 30% variance
             predicted_points = max(0, base_points + variance)
             
-            # Add some realistic factors
             confidence = min(95, max(60, 100 - abs(variance) * 2))
-            
-            # Generate realistic salary (based on performance)
-            base_salary = 3000 + (predicted_points * 200)
-            salary = base_salary + np.random.randint(-500, 1000)
-            
-            # Calculate value
-            value = predicted_points / (salary / 1000) if salary > 0 else 0
             
             prediction = PlayerPrediction(
                 player_id=player['player_id'],
@@ -217,9 +207,7 @@ async def get_predictions(request: PredictionRequest):
                 position=player['position'],
                 team=player['team'],
                 predicted_points=round(predicted_points, 1),
-                confidence=round(confidence, 1),
-                salary=int(salary),
-                value=round(value, 2)
+                confidence=round(confidence, 1)
             )
             predictions.append(prediction)
         
