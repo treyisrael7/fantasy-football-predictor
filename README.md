@@ -9,5 +9,3 @@ The dashboard shows cross-validation metrics (2023→2024) and, when 2025 actual
 **Live app:** [https://fantasy-football-predictor.streamlit.app/](https://fantasy-football-predictor.streamlit.app/)
 
 ---
-
-MIT license.
