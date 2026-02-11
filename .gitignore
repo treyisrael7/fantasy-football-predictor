@@ -48,7 +48,7 @@ venv.bak/
 ehthumbs.db
 Thumbs.db
 
-# Live/optional data (not required for app; app seeds from real_*.csv)
+# Optional live cache (not required for deploy)
 data/live/
 !data/live/.gitkeep
 
@@ -71,7 +71,7 @@ RESUME_PROJECT.md
 .env.production
 *.pem
 
-# Temporary
+# Temporary / one-off scripts
 *.tmp
 *.temp
 *.swp
@@ -79,3 +79,5 @@ RESUME_PROJECT.md
 *~
 temp/
 tmp/
+fix_*.py
+scratch*.py

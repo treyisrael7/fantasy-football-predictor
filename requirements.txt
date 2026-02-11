@@ -1,4 +1,4 @@
-# Fantasy Football Predictor - Production Requirements
+# Fantasy Football Forecasting Dashboard
 
 # Core ML and Data Science
 pandas>=2.0.0
@@ -23,10 +23,6 @@ beautifulsoup4>=4.12.0
 xgboost>=1.7.0
 lightgbm>=4.0.0
 optuna>=3.0.0
-
-# Database
-psycopg2-binary>=2.9.0
-redis>=4.5.0
 
 # Utilities
 python-dotenv>=1.0.0

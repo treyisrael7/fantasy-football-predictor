@@ -112,7 +112,7 @@ async def health_check():
     )
 
 def _get_data():
-    """Load players, teams, stats from Redis/Postgres/CSV."""
+    """Load players, teams, stats from CSV."""
     data_dir = os.path.join(_app_root, "data") if _app_root else "data"
     players, teams, stats, _, _ = load_data_backend(data_dir=data_dir)
     return players, teams, stats
@@ -120,7 +120,7 @@ def _get_data():
 
 @app.get("/players")
 async def get_players(limit: int = 100):
-    """Get list of players (from Redis cache, Postgres, or CSV)."""
+    """Get list of players (from CSV)."""
     try:
         players, _, _ = _get_data()
         if players is None or players.empty:
@@ -139,7 +139,7 @@ async def get_players(limit: int = 100):
 
 @app.get("/teams")
 async def get_teams():
-    """Get list of teams (from Redis cache, Postgres, or CSV)."""
+    """Get list of teams (from CSV)."""
     try:
         _, teams, _ = _get_data()
         if teams is None or teams.empty:
@@ -156,7 +156,7 @@ async def get_teams():
 
 @app.post("/predictions", response_model=List[PlayerPrediction])
 async def get_predictions(request: PredictionRequest):
-    """Get fantasy football predictions (data from Redis/Postgres/CSV)."""
+    """Get fantasy football predictions (data from CSV)."""
     try:
         players, teams, stats = _get_data()
         if players is None or teams is None or stats is None:
@@ -224,7 +224,7 @@ async def get_predictions(request: PredictionRequest):
 
 @app.get("/stats/{player_id}")
 async def get_player_stats(player_id: str, season: int = 2024):
-    """Get stats for a specific player (from Redis/Postgres/CSV)."""
+    """Get stats for a specific player (from CSV)."""
     try:
         _, _, stats = _get_data()
         if stats is None or stats.empty:

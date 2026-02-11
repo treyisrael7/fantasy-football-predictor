@@ -40,7 +40,7 @@ st.markdown("""
 
 @st.cache_data(ttl=120)
 def load_data():
-    """Load players, teams, stats from cache/DB/CSV."""
+    """Load players, teams, stats from CSV."""
     data_dir = os.path.join(_root, "data")
     try:
         return load_data_backend(data_dir=data_dir)
