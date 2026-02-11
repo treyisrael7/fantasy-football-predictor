@@ -1,7 +1,6 @@
 # -----------------------------------------------------------------------------
-# Ignore generated, secret, and local-only files. Kept in repo for deploy:
-#   app/, src/, scripts/, data/real_*.csv, requirements.txt, Dockerfile,
-#   docker-compose.yml, init.sql, README.md, DEPLOY.md, .env.example
+# For live deploy we keep in repo: app/, src/, scripts/, data/*.csv,
+# models/general_predictor.pkl, models/training_summary.json, requirements.txt
 # -----------------------------------------------------------------------------
 
 # Python

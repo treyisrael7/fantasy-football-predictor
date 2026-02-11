@@ -1,5 +1,5 @@
 {
-  "training_date": "2026-02-10T19:03:19.807972",
+  "training_date": "2026-02-10T19:14:45.244860",
   "forecast_mode": true,
   "target": "2024 PPG (actual); at inference we predict 2025 from 2024",
   "sample_weighted": true,

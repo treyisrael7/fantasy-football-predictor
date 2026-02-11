@@ -1,7 +1,3 @@
 """
-App config from environment. Used by web app and scripts.
-The app runs from CSV only; no database or cache required.
+App config. The app runs from CSV only; no env vars or .env file required.
 """
-from dotenv import load_dotenv
-
-load_dotenv()

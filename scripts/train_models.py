@@ -187,7 +187,8 @@ def train_models():
     r2 = float(1 - (np.sum((y_test - predictions) ** 2) / np.sum((y_test - y_test.mean()) ** 2)))
 
     logger.info("  MAE: %.3f  RMSE: %.3f  R²: %.3f", mae, rmse, r2)
-    joblib.dump(predictor, os.path.join(models_dir, "general_predictor.pkl"))
+    model_path = os.path.join(models_dir, "general_predictor.pkl")
+    joblib.dump(predictor, model_path)
 
     summary = {
         'training_date': datetime.now().isoformat(),
@@ -201,6 +202,9 @@ def train_models():
     with open(os.path.join(models_dir, "training_summary.json"), 'w') as f:
         json.dump(summary, f, indent=2)
     logger.info("Models saved to %s", models_dir)
+    print("Model saved to:", os.path.abspath(model_path))
+    print("Summary saved to:", os.path.abspath(os.path.join(models_dir, "training_summary.json")))
+    print("For live deploy: git add models/general_predictor.pkl models/training_summary.json && git commit && git push")
     return True
 
 if __name__ == "__main__":

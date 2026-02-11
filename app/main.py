@@ -204,7 +204,9 @@ def _load_ml_model():
             try:
                 obj = joblib.load(path)
                 # Whole predictor object (e.g. joblib.dump(predictor, path))
-                if hasattr(obj, "predict") and getattr(obj, "is_trained", False):
+                if hasattr(obj, "predict") and callable(getattr(obj, "predict", None)):
+                    if not getattr(obj, "is_trained", False):
+                        obj.is_trained = True
                     return obj
                 # Dict from save_models()
                 if isinstance(obj, dict) and "models" in obj:
