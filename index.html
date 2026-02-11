@@ -5,18 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Fantasy Football Forecasting Dashboard</title>
 
-    <!-- Open Graph (LinkedIn Preview) -->
-    <meta property="og:title" content="Fantasy Football Forecasting Dashboard" />
-    <meta
-      property="og:description"
-      content="A deployed ML dashboard that forecasts next-season NFL fantasy PPG and compares model performance to a simple baseline."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://treyisrael7.github.io/fantasy-football-predictor/" />
-    <meta property="og:image" content="https://treyisrael7.github.io/fantasy-football-predictor/preview.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-
     <style>
       :root {
         --bg: #0b0f19;
@@ -24,8 +12,6 @@
         --text: rgba(255, 255, 255, 0.92);
         --muted: rgba(255, 255, 255, 0.65);
         --border: rgba(255, 255, 255, 0.12);
-        --link: rgba(255, 255, 255, 0.9);
-        --link-hover: rgba(255, 255, 255, 1);
       }
 
       * {
@@ -34,8 +20,7 @@
 
       body {
         margin: 0;
-        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial,
-          "Apple Color Emoji", "Segoe UI Emoji";
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
         background: radial-gradient(circle at top, rgba(124, 58, 237, 0.18), transparent 55%),
           radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.12), transparent 60%),
           var(--bg);
@@ -46,80 +31,58 @@
       .container {
         max-width: 900px;
         margin: 0 auto;
-        padding: 64px 20px;
+        padding: 72px 20px;
       }
 
       .card {
         background: var(--card);
         border: 1px solid var(--border);
         border-radius: 18px;
-        padding: 28px;
+        padding: 30px;
         backdrop-filter: blur(10px);
       }
 
       h1 {
         font-size: 34px;
-        margin: 0 0 8px 0;
+        margin: 0 0 10px 0;
         letter-spacing: -0.5px;
       }
 
       p {
         margin: 0;
-        color: var(--muted);
         font-size: 16px;
-      }
-
-      .section {
-        margin-top: 22px;
+        color: var(--muted);
       }
 
       .links {
-        margin-top: 20px;
+        margin-top: 22px;
         display: flex;
         gap: 12px;
         flex-wrap: wrap;
       }
 
-      a.button {
+      a {
         display: inline-block;
         padding: 10px 14px;
         border-radius: 12px;
         border: 1px solid var(--border);
         text-decoration: none;
-        color: var(--link);
+        color: rgba(255, 255, 255, 0.9);
         background: rgba(255, 255, 255, 0.04);
         transition: 0.2s ease;
         font-size: 14px;
       }
 
-      a.button:hover {
+      a:hover {
         background: rgba(255, 255, 255, 0.08);
         border-color: rgba(255, 255, 255, 0.22);
-        color: var(--link-hover);
         transform: translateY(-1px);
       }
 
-      .meta {
+      .stack {
         margin-top: 18px;
         font-size: 13px;
-        color: rgba(255, 255, 255, 0.55);
-      }
-
-      .footer {
-        margin-top: 26px;
-        font-size: 13px;
         color: rgba(255, 255, 255, 0.5);
-      }
-
-      .footer a {
-        color: rgba(255, 255, 255, 0.7);
-        text-decoration: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-      }
-
-      .footer a:hover {
-        color: rgba(255, 255, 255, 0.95);
-        border-bottom-color: rgba(255, 255, 255, 0.4);
       }
     </style>
   </head>
@@ -129,28 +92,22 @@
       <div class="card">
         <h1>Fantasy Football Forecasting Dashboard</h1>
         <p>
-          A small machine learning project that forecasts next-season NFL fantasy points per game
-          (PPG) using prior-year player stats. The app compares model performance against a simple
-          baseline to show when ML helps and when it doesn’t.
+          A machine learning project that forecasts next-season NFL fantasy points per game (PPG)
+          using prior-year player stats and compares results against a simple baseline.
         </p>
 
         <div class="links">
-          <a class="button" href="https://fantasy-football-predictor.streamlit.app/" target="_blank" rel="noopener noreferrer">
-            Live Streamlit App
+          <a href="https://fantasy-football-predictor.streamlit.app/" target="_blank" rel="noopener noreferrer">
+            Live Dashboard
           </a>
 
-          <a class="button" href="https://github.com/treyisrael7/fantasy-football-predictor" target="_blank" rel="noopener noreferrer">
-            GitHub Repository
+          <a href="https://github.com/treyisrael7/fantasy-football-predictor" target="_blank" rel="noopener noreferrer">
+            Source Code
           </a>
         </div>
 
-        <div class="section meta">
-          Built with Python, pandas, scikit-learn, LightGBM, and Streamlit.
-        </div>
-
-        <div class="footer">
-          LinkedIn preview uses <code>preview.png</code>. Replace that image with a screenshot of
-          the evaluation section for the best thumbnail.
+        <div class="stack">
+          Python · pandas · scikit-learn · LightGBM · Streamlit
         </div>
       </div>
     </div>
