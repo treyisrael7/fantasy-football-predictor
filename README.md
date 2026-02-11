@@ -6,6 +6,8 @@ I built this to see how well a simple ML setup could predict next-year fantasy P
 
 The dashboard shows cross-validation metrics (2023→2024) and, when 2025 actuals are available, out-of-sample results. You get baseline (predict 2025 = 2024 PPG) vs the ML ensemble, and the same comparison for starter-level players only (PPG ≥ 5). Honest take: the naive baseline often does about as well or better overall; the model is still useful for context and for seeing where extra features don’t buy much.
 
+**Live app:** [https://fantasy-football-predictor.streamlit.app/](https://fantasy-football-predictor.streamlit.app/)
+
 ---
 
-MIT license. If you want to run or redeploy it yourself, see [DEPLOY.md](DEPLOY.md).
+MIT license.
