@@ -52,11 +52,9 @@ Thumbs.db
 data/live/
 !data/live/.gitkeep
 
-# Trained models (large, regenerable via: python scripts/train_models.py)
+# Trained models: commit models/*.pkl and models/training_summary.json so the live app can load them
+# models/models_real/ kept if you use that path
 models/models_real/
-models/*.pkl
-models/*.json
-!models/.gitkeep
 
 # Logs
 *.log

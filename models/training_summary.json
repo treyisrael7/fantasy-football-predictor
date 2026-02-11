@@ -1,0 +1,12 @@
+{
+  "training_date": "2026-02-10T19:03:19.807972",
+  "forecast_mode": true,
+  "target": "2024 PPG (actual); at inference we predict 2025 from 2024",
+  "sample_weighted": true,
+  "n_train": 919,
+  "general_model_performance": {
+    "mae": 1.4955753853414684,
+    "rmse": 2.7622110447362647,
+    "r2": 0.39853019479651386
+  }
+}
